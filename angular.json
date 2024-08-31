@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "c908a668-d6a9-4a4d-9246-edb300566abd"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -70,6 +73,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "host": "0.0.0.0",
+            "port": 4200
+          },
           "configurations": {
             "production": {
               "browserTarget": "TileSlide:build:production"
