@@ -1,1 +1,50 @@
-<p>board works!</p>
+<div class="flex flex-col m-4">
+<div class="flex flex-row justify-around w-full">
+    <div class="bg-yellow-300 p-6 rounded-md w-32">
+        <span class="font-bold text-2xl">2048</span>
+    </div>
+    <div class="flex flex-col w-32" >
+        <div>
+            <div class="bg-gray-700 rounded-md flex
+            flex-col">
+                <span class=" text-white font-bold text-l flex justify-center
+                pl-5 pt-1 pr-5 cursor-default
+                ">SCORE</span>
+                <span class=" text-white font-bold text-l flex 
+                justify-center pb-1 cursor-default
+                ">{{currentScore}}</span>
+            </div>
+        </div>
+        <div class="mt-2" >
+            <div class="bg-red-500 rounded-md">
+                <span class="text-white font-bold text-l
+                flex justify-center pl-5 pt-1 pr-5 pb-2 cursor-pointer
+                ">NEW</span>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col w-30" >
+        <div>
+            <div class="bg-gray-700 rounded-md flex
+            flex-col">
+                <span class=" text-white font-bold text-l flex justify-center
+                pl-5 pt-1 pr-5 cursor-default
+                ">BEST</span>
+                <span class=" text-white font-bold text-l flex 
+                justify-center pb-1 cursor-default
+                ">{{currentScore}}</span>
+            </div>
+        </div>
+        <div class="mt-2">
+            <div class="bg-red-500 rounded-md">
+                <span class="text-white font-bold text-l
+                flex justify-center pl-5 pt-1 pr-5 pb-2 cursor-pointer
+                ">UNDO</span>
+            </div>
+        </div>
+    </div>
+</div>   
+<div class="text-white text-center mt-1 p-2 cursive">
+    Join the Number and get to the 2048 title!
+</div>
+</div>

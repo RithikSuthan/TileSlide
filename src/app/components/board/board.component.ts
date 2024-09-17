@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
 
+  currentScore:any;
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void 
+  {
+    this.currentScore=0;
   }
 
 }

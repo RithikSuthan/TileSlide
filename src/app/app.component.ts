@@ -9,11 +9,12 @@ export class AppComponent {
   title = 'TileSlide';
   homePage:any;
   gamePage:any;
-
   ngOnInit()
   {
-    this.homePage=true;
-    this.gamePage=false;
+    // this.homePage=true;
+    // this.gamePage=false;
+    this.homePage=false;
+    this.gamePage=true;
   }
   gamePageFlag(){
     this.homePage=false;
