@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
+  
+  @Output() homePageFlag=new EventEmitter<any>();
+  @Output() gamePageFlag=new EventEmitter<any>();
 
   ngOnInit(): void {
   }
 
+  // playPage():void
+  // {
+  //   this.router.navigateByUrl('/game').then(()=>
+  //   {
+  //       // console.log("Page traversal");
+  //   }).catch((err)=>
+  //   {
+  //       console.error(err);
+  //   })
+  // }
+
+playPage():void{
+  this.gamePageFlag.emit(true);
 }
+
+  } 
+

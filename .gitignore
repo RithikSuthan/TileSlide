@@ -4,6 +4,8 @@
 /dist
 /tmp
 /out-tsc
+/TileSlide-win32-x64
+/release/TileSlide-win32-x64
 # Only exists if Bazel was run
 /bazel-out
 

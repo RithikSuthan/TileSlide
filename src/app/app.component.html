@@ -1,1 +1,2 @@
-<app-home></app-home>
+<app-home *ngIf="homePage"></app-home>
+<app-board *ngIf="gamePage" (gamePageFlag)="gamePageFlag()"></app-board>

@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'TileSlide';
+  homePage:any;
+  gamePage:any;
+
+  ngOnInit()
+  {
+    this.homePage=true;
+    this.gamePage=false;
+  }
+  gamePageFlag(){
+    this.homePage=false;
+    this.gamePage=true;
+  }
 }
