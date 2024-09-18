@@ -29,7 +29,14 @@ export class BoardComponent implements OnInit {
       let ind=Math.floor(Math.random() * 15);
       let row=Math.floor(ind/4);
       let col=ind%4;
+      let ind1=Math.floor(Math.random() * 15);
+      while(ind1==ind){
+        ind1=Math.floor(Math.random() * 15);
+      }
+      let row1=Math.floor(ind1/4);
+      let col1=ind1%4;
       this.board[row][col]=2;
+      this.board[row1][col1]=2;
   }
   ngOnInit(): void 
   {
