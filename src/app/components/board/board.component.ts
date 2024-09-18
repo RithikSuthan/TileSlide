@@ -11,6 +11,8 @@ export class BoardComponent implements OnInit {
   currentTime:any;
   board:any;
   colorMap:any;
+  gameStarted:any;
+  startGameTime:any;
   constructor() { }
 
   intializeBoard()
@@ -27,10 +29,7 @@ export class BoardComponent implements OnInit {
       let ind=Math.floor(Math.random() * 15);
       let row=Math.floor(ind/4);
       let col=ind%4;
-      console.log(ind,row,col);
-      this.board[row][col]=8;
-      // this.board[0][0]=16;
-      console.log(this.board,Math.floor(Math.random() * 15));
+      this.board[row][col]=2;
   }
   ngOnInit(): void 
   {
@@ -52,9 +51,47 @@ export class BoardComponent implements OnInit {
       1024: 'teal',
       2048: 'gold'
   };
+  this.startTimer();
   }
   getColor(val:any)
   {
     return this.colorMap[val];
+  }
+  startTimer()
+  {
+      if(!this.gameStarted)
+      {
+        this.gameStarted=true;
+        this.startGameTime=Date.now();
+        if(this.startGameTime)
+        {
+          let intervalId=setInterval(()=>
+            {
+              let currTime=Date.now();
+              // console.log(currTime," ",this.startGameTime)
+              let diff=currTime-this.startGameTime;
+              // console.log(diff);
+              this.displayTimer(diff);
+            },1000);
+        }
+        
+      }
+  }
+  displayTimer(time:any)
+  {
+    let ele=document.getElementById("displayTimer");
+    if(ele)
+    {
+      const minutes = Math.floor(time / 1000 / 60);
+      const seconds = Math.floor((time / 1000) % 60);
+    
+      const displayMinutes = minutes < 10 ? `0${minutes}` : minutes;
+      const displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
+      ele.innerText=`${displayMinutes}:${displaySeconds}`;
+    }
+    else
+    {
+      console.error("Element retrieval failed");
+    }
   }
 }
