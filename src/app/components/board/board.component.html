@@ -1,125 +1,52 @@
 <div class="flex flex-col m-4">
-<div class="flex flex-row justify-around w-full">
-    <div class="bg-yellow-300 p-6 rounded-md w-32">
+    <div class="flex flex-row justify-around w-full">
+      <div class="bg-yellow-300 p-6 rounded-md w-32">
         <span class="font-bold text-2xl">2048</span>
-    </div>
-    <div class="flex flex-col w-32" >
+      </div>
+      <div class="flex flex-col w-32">
         <div>
-            <div class="bg-gray-700 rounded-md flex
-            flex-col">
-                <span class=" text-white font-bold text-l flex justify-center
-                pl-5 pt-1 pr-5 cursor-default
-                ">SCORE</span>
-                <span class=" text-white font-bold text-l flex 
-                justify-center pb-1 cursor-default
-                ">{{currentScore}}</span>
-            </div>
-        </div>
-        <div class="mt-2" >
-            <div class="bg-red-500 rounded-md">
-                <span class="text-white font-bold text-l
-                flex justify-center pl-5 pt-1 pr-5 pb-2 cursor-pointer
-                ">NEW</span>
-            </div>
-        </div>
-    </div>
-    <div class="flex flex-col w-30" >
-        <div>
-            <div class="bg-gray-700 rounded-md flex
-            flex-col">
-                <span class=" text-white font-bold text-l flex justify-center
-                pl-5 pt-1 pr-5 cursor-default
-                ">BEST</span>
-                <span class=" text-white font-bold text-l flex 
-                justify-center pb-1 cursor-default
-                ">{{currentScore}}</span>
-            </div>
+          <div class="bg-gray-700 rounded-md flex flex-col">
+            <span class="text-white font-bold text-l flex justify-center pl-5 pt-1 pr-5 cursor-default">SCORE</span>
+            <span class="text-white font-bold text-l flex justify-center pb-1 cursor-default">{{currentScore}}</span>
+          </div>
         </div>
         <div class="mt-2">
-            <div class="bg-red-500 rounded-md">
-                <span class="text-white font-bold text-l
-                flex justify-center pl-5 pt-1 pr-5 pb-2 cursor-pointer
-                ">UNDO</span>
-            </div>
+          <div class="bg-red-500 rounded-md">
+            <span class="text-white font-bold text-l flex justify-center pl-5 pt-1 pr-5 pb-2 cursor-pointer" (click)="startGame()">NEW</span>
+          </div>
         </div>
+      </div>
+      <div class="flex flex-col w-30">
+        <div>
+          <div class="bg-gray-700 rounded-md flex flex-col">
+            <span class="text-white font-bold text-l flex justify-center pl-5 pt-1 pr-5 cursor-default">BEST</span>
+            <span class="text-white font-bold text-l flex justify-center pb-1 cursor-default">{{bestScore}}</span>
+          </div>
+        </div>
+        <div class="mt-2">
+          <div class="bg-red-500 rounded-md">
+            <span class="text-white font-bold text-l flex justify-center pl-5 pt-1 pr-5 pb-2 cursor-pointer" (click)="undo()">UNDO</span>
+          </div>
+        </div>
+      </div>
     </div>
-</div>   
-<div class="text-white text-center mt-1 p-2 cursive">
-    Join the Number and get to the 2048 title!
-</div>
-<div class="mt-1">
-    <div class="bg-white board rounded-md w-full">
-        <div class="flex flex-col w-full">
-            <div class="flex flex-row w-full justify-around m-2 ml-0 mt-3">
-                <div class=" flex w-1/5 bg-gray-600 cell rounded-md"
-                [ngStyle]="{'background-color':getColor(board[0][0])}"
-                >
-                    {{board[0][0]===0 ? '':board[0][0]}}
-                </div>
-                <div class=" flex w-1/5 h-1/5 bg-gray-600 cell rounded-md" [ngStyle]="{'background-color':getColor(board[0][1])}">
-                    {{board[0][1]===0 ? '':board[0][1]}}
-                </div>
-                <div class=" flex w-1/5 h-1/5 bg-gray-600 cell rounded-md" [ngStyle]="{'background-color':getColor(board[0][2])}">
-                    {{board[0][2]===0 ? '':board[0][2]}}
-                </div>
-                <div class=" flex w-1/5 h-1/5 bg-gray-600 cell rounded-md" [ngStyle]="{'background-color':getColor(board[0][3])}">
-                    {{board[0][3]===0 ? '':board[0][3]}}
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-col w-full">
-            <div class="flex flex-row w-full justify-around m-2 ml-0">
-                <div class=" flex w-1/5 bg-gray-600 cell rounded-md" [ngStyle]="{'background-color':getColor(board[1][0])}">
-                    {{board[1][0]===0 ? '':board[1][0]}}
-                </div>
-                <div class=" flex w-1/5 h-1/5 bg-gray-600 cell rounded-md" [ngStyle]="{'background-color':getColor(board[1][1])}">
-                    {{board[1][1]===0 ? '':board[1][1]}}
-                </div>
-                <div class=" flex w-1/5 h-1/5 bg-gray-600 cell rounded-md" [ngStyle]="{'background-color':getColor(board[1][2])}">
-                    {{board[1][2]===0 ? '':board[1][2]}}
-                </div>
-                <div class=" flex w-1/5 h-1/5 bg-gray-600 cell rounded-md" [ngStyle]="{'background-color':getColor(board[1][3])}">
-                    {{board[1][3]===0 ? '':board[1][3]}}
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-col w-full">
-            <div class="flex flex-row w-full justify-around m-2 ml-0">
-                <div class=" flex w-1/5 bg-gray-600 cell rounded-md" [ngStyle]="{'background-color':getColor(board[2][0])}">
-                    {{board[2][0]===0 ? '':board[2][0]}}
-                </div>
-                <div class=" flex w-1/5 h-1/5 bg-gray-600 cell rounded-md" [ngStyle]="{'background-color':getColor(board[2][1])}">
-                    {{board[2][1]===0 ? '':board[2][1]}}
-                </div>
-                <div class=" flex w-1/5 h-1/5 bg-gray-600 cell rounded-md" [ngStyle]="{'background-color':getColor(board[2][2])}">
-                    {{board[2][2]===0 ? '':board[2][2]}}
-                </div>
-                <div class=" flex w-1/5 h-1/5 bg-gray-600 cell rounded-md" [ngStyle]="{'background-color':getColor(board[2][3])}">
-                    {{board[2][3]===0 ? '':board[2][3]}}
-                </div>
-            </div>
-        </div>
-                <div class="flex flex-col w-full">
-            <div class="flex flex-row w-full justify-around m-2 ml-0">
-                <div class=" flex w-1/5 bg-gray-600 cell rounded-md" [ngStyle]="{'background-color':getColor(board[3][0])}">
-                    {{board[3][0]===0 ? '':board[3][0]}}
-                </div>
-                <div class=" flex w-1/5 h-1/5 bg-gray-600 cell rounded-md" [ngStyle]="{'background-color':getColor(board[3][1])}">
-                    {{board[3][1]===0 ? '':board[3][1]}}
-                </div>
-                <div class=" flex w-1/5 h-1/5 bg-gray-600 cell rounded-md" [ngStyle]="{'background-color':getColor(board[3][2])}">
-                    {{board[3][2]===0 ? '':board[3][2]}}
-                </div>
-                <div class=" flex w-1/5 h-1/5 bg-gray-600 cell rounded-md" [ngStyle]="{'background-color':getColor(board[3][3])}">
-                    {{board[3][2]===0 ? '':board[3][3]}}
-                </div>
-            </div>
-        </div>
+    <div class="text-white text-center mt-1 p-2 cursive">
+      Join the Number and get to the 2048 title!
     </div>
-
-</div>
-<div class="text-white flex justify-between mt-1 p-2 cursive">
-    <div>0 MOVES</div>
-    <div id="displayTimer">{{currentTime}}</div>
-</div>
-</div>
+    <div class="mt-1">
+      <div class="bg-white board rounded-md w-full" id="game-board">
+        <div *ngFor="let row of board; let i = index" class="flex flex-row w-full justify-around m-2 ml-0">
+          <div *ngFor="let cell of row" 
+               class="flex w-1/5 h-1/5 bg-gray-600 cell rounded-md" 
+               [ngStyle]="{'background-color': getColor(cell)}">
+            {{ cell === 0 ? '' : cell }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-white flex justify-between mt-1 p-2 cursive">
+      <div>{{moveCount}} MOVES</div>
+      <div id="displayTimer">{{currentTime}}</div>
+    </div>
+  </div>
+  
