@@ -10,6 +10,8 @@ import { HammerModule } from '@angular/platform-browser';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,9 @@ import { SigninComponent } from './components/signin/signin.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HammerModule
+    HammerModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -47,10 +47,10 @@ export class LoginComponent implements OnInit {
   }
   login()
   {
-    this.loginFlag=true;
-    this.registerFlag=false;
-    this.alertBox=false;
-    this.dashboardFlag=false;
+      this.loginFlag=true;
+      this.registerFlag=false;
+      this.alertBox=false;
+      this.dashboardFlag=false;
   }
   register()
   {
@@ -58,5 +58,9 @@ export class LoginComponent implements OnInit {
     this.registerFlag=true;
     this.alertBox=false;
     this.dashboardFlag=false;
+  }
+  signInFlag()
+  {
+    this.ngOnInit();
   }
 }
