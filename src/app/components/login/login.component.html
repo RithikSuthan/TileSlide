@@ -1,0 +1,94 @@
+<div style="height: 90%;width: 100%;
+display: flex;flex-direction: column;
+justify-content: space-evenly;margin-top:10%;
+">
+    <div style="color: white;font-size:80px;
+    display: flex;justify-content: space-around;
+    flex-direction: row;
+    font-weight: bold;
+    ">
+        2048
+    </div>
+    <div style="color: white;">
+    <div style="margin: 10px;display: flex;height: fit-content;
+    flex-direction: column;
+    align-items: center;margin-top: 20px;
+    font-weight: bold;font-size: large;
+    ">
+        <div style="background-color: rgb(60, 231, 60);
+        display: flex;
+        padding: 5px;justify-content: center;
+        width: 80%;
+        border-radius: 20px;
+        cursor: pointer;
+        border: 3px solid white;
+        "
+        
+        >
+        <img src="../../../assets/app.png" alt="appicon"
+        style="height: 20px;margin-right: 10px;
+        display: flex;align-items: center;margin-top: 2px;"
+        >
+            Sign In
+        </div>
+
+        <div style="background-color: rgb(213, 230, 24);
+        display: flex;
+        padding: 5px;justify-content: center;
+        width: 80%;
+        border-radius: 20px;
+        cursor: pointer;
+        border: 3px solid white;
+        margin-top: 10px;
+        ">
+                <img src="../../../assets/app.png" alt="appicon"
+                style="height: 20px;margin-right: 10px;
+                display: flex;align-items: center;margin-top: 2px;"
+                >
+            New User
+        </div>
+
+        <div style="background-color: rgb(84, 186, 214);
+        display: flex;
+        padding: 5px;justify-content: center;
+        width: 80%;
+        border-radius: 20px;
+        cursor: pointer;
+        border: 3px solid white;
+        margin-top: 20px;
+        "
+        (click)="guestPlayer()"
+        >
+                <img src="../../../assets/app.png" alt="appicon"
+                style="height: 20px;margin-right: 10px;
+                display: flex;align-items: center;margin-top: 2px;"
+                >
+            Guest Player
+        </div>
+
+    </div>
+
+    </div>
+</div>
+
+<div class="flex flex-col alert justify-center" *ngIf="alertBox">
+    <div class="flex justify-center  flex-row items-center
+    h-4/5
+    " 
+    >
+    <div><img src="../../../assets/information.png" class="h-10"></div>
+    <div class="text-center font-semibold">Game Progress will not be stored. Cancel to Sign in.</div>
+    </div>
+    <div class="flex w-full justify-around h-1/5 m-1">
+        <div class="bg-red-500 p-1 rounded-md text-white font-semibold"
+        (click)="closealert()">
+            Cancel</div>
+        <div></div>
+        <div class="bg-green-500 p-1 rounded-md text-white font-semibold"
+        (click)="continueGame()"
+        >
+            Continue</div>
+        <div></div>
+    </div>
+</div>
+

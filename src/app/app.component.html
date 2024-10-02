@@ -1,2 +1,4 @@
 <app-home *ngIf="homePage" (gamePageFlag)="gamePageFlag()"></app-home>
 <app-board *ngIf="gamePage" ></app-board>
+ <app-login *ngIf="loginPage" (gamePageFlag)="gamePageFlag()"></app-login>
+ <app-register *ngIf="registerPage"></app-register>
