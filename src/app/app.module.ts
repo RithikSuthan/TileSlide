@@ -9,6 +9,7 @@ import { PageNotFoundComponentComponent } from './components/page-not-found-comp
 import { HammerModule } from '@angular/platform-browser';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { SigninComponent } from './components/signin/signin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { LoginComponent } from './components/login/login.component';
     BoardComponent,
     PageNotFoundComponentComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

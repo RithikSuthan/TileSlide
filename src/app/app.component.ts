@@ -10,20 +10,15 @@ export class AppComponent {
   homePage:any;
   gamePage:any;
   loginPage:any;
-  registerPage:any;
   ngOnInit()
   {
     this.homePage=false;
     this.gamePage=false;
-    this.registerPage=false;
     this.loginPage=true;
-    // this.homePage=false;
-    // this.gamePage=true;
   }
   gamePageFlag(){
     this.homePage=false;
     this.gamePage=true;
-    this.registerPage=false;
     this.loginPage=false;
   }
 }
