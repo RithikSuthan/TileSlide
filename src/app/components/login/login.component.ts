@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
     this.alertBox=false;
     this.dashboardFlag=false;
   }
-  signInFlag()
+  refreshPage()
   {
     this.ngOnInit();
   }

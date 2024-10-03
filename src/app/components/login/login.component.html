@@ -93,5 +93,5 @@ justify-content: space-evenly;margin-top:10%;
     </div>
 </div>
 
-<app-signin *ngIf="loginFlag" (signInFlag)="signInFlag()"></app-signin>
-<app-register *ngIf="registerFlag"></app-register>
+<app-signin *ngIf="loginFlag" (signInFlag)="refreshPage()"></app-signin>
+<app-register *ngIf="registerFlag" (registerFlag)="refreshPage()"></app-register>

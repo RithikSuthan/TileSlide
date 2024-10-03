@@ -1,18 +1,41 @@
-<div class="flex flex-col alert justify-center" >
-    <div class="flex justify-center  flex-row items-center
-    h-4/5
-    " 
-    >
-    <div><img src="../../../assets/information.png" class="h-10"></div>
-    <div class="text-center font-semibold">Game Progress will not be stored. Cancel to Sign in.</div>
-    </div>
-    <!-- <div class="flex w-full justify-around h-1/5 m-1">
-        <div class="bg-red-500 p-1 rounded-md text-white font-semibold"
-        (click)="closealert()">
-            Cancel</div>
-        <div class="bg-green-500 p-1 rounded-md text-white font-semibold"
-        (click)="continueGame()"
+<div class="flex flex-col alert " *ngIf="registerBox" >
+    <div class="flex w-full justify-end ">
+        <div class="h-10 w-fit bg-red-600 p-3 m-2 rounded-lg
+        text-white font-bold
+        "
+        (click)="close()"
         >
-            Continue</div>
-    </div> -->
+            X</div>
+    </div>
+    <div class="flex w-full p-5 flex-col justify-around">
+        <div class="flex justify-between">
+            <label class="font-bold text-xl">UserName:</label>
+            <input type="email" class="bg-green-200 text-xl" required
+            [(ngModel)]="registerObj.userName"
+            >    
+        </div>
+        <br>
+        <div class="flex justify-between">
+            <label class="font-bold text-xl">Email:</label>
+            <input type="email" class="bg-green-200 text-xl" required
+            [(ngModel)]="registerObj.email"
+            >    
+        </div>
+        <br>
+        <div class="flex justify-between">
+            <label class="font-bold text-xl">Password:</label>
+            <input type="password" class="bg-green-200 text-xl" required
+            [(ngModel)]="registerObj.password"
+            >    
+        </div>
+        <br>
+        <div class="flex justify-center">
+            <span class="font-bold bg-blue-400 p-3 text-xl rounded-md"
+            (click)="register()"
+            >
+                Register
+            </span>
+        </div>
+
+    </div>
 </div>
