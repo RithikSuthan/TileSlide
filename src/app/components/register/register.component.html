@@ -12,6 +12,7 @@
             <label class="font-bold text-xl">UserName:</label>
             <input type="email" class="bg-green-200 text-xl" required
             [(ngModel)]="registerObj.userName"
+            (change)="checkUserName()"
             >    
         </div>
         <br>
@@ -19,14 +20,33 @@
             <label class="font-bold text-xl">Email:</label>
             <input type="email" class="bg-green-200 text-xl" required
             [(ngModel)]="registerObj.email"
+            (change)="checkEmail()"
             >    
         </div>
         <br>
         <div class="flex justify-between">
             <label class="font-bold text-xl">Password:</label>
-            <input type="password" class="bg-green-200 text-xl" required
+            <input [type]="showPassword?'text':'password'"
+             class="bg-green-200 text-xl" required
             [(ngModel)]="registerObj.password"
             >    
+            <img src="../../../assets/show.png" alt="showImage" class="w-6 cursor-pointer
+            " *ngIf="showPassword"
+            (click)="visiblePassword()"
+            >
+             <img src="../../../assets/hidden.png" alt="hiddenImage"
+             class="w-6 cursor-pointer
+            " *ngIf="!showPassword" (click)="visiblePassword()"
+            >
+        </div>
+        <br>
+        <div class="flex justify-between">
+            <label class="font-bold text-xl">Confirm Password:</label>
+            <input type="password" class="bg-green-200 text-xl" required
+            [(ngModel)]="confirmPassword"
+            (change)="checkChanngePassword()"
+            >    
+           
         </div>
         <br>
         <div class="flex justify-center">

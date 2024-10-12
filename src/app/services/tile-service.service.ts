@@ -21,4 +21,14 @@ export class TileServiceService {
     const url=this.url+EndPoints.register;
     return this.http.post<any>(url,postObj);
   }
+  checkUserName(userName:any)
+  {
+    const url=this.url+EndPoints.existuserName+`?userName=`+userName;
+    return this.http.get<any>(url);
+  }
+  checkEmailExist(email:any)
+  {
+    const url=this.url+EndPoints.existEmail+`?email=`+email;
+    return this.http.get<any>(url);
+  }
 }
