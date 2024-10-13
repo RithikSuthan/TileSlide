@@ -45,6 +45,7 @@ export class RegisterComponent implements OnInit {
         (response)=>{
           console.log(response);
           alert("Player added Successfully");
+          this.close();
         },
         (error)=>{
           console.error(error);

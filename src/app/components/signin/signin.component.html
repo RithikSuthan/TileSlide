@@ -20,6 +20,14 @@
             <input type="password" class="bg-green-200 text-xl" required
             [(ngModel)]="signInobj.password"
             >    
+            <img src="../../../assets/show.png" alt="showImage" class="w-6 cursor-pointer
+            " *ngIf="showPassword"
+            (click)="visiblePassword()"
+            >
+             <img src="../../../assets/hidden.png" alt="hiddenImage"
+             class="w-6 cursor-pointer
+            " *ngIf="!showPassword" (click)="visiblePassword()"
+            >
         </div>
         <br>
         <div class="flex justify-center">

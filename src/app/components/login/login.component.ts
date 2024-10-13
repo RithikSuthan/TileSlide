@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
     this.alertBox=false;
     this.dashboardFlag=false;
     this.gamePageFlag.emit(true);
+    localStorage.removeItem("email");
   }
   login()
   {
