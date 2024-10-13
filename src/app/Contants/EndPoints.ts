@@ -4,4 +4,5 @@ export class EndPoints
     public static register="/add";
     public static existuserName="/existuserName";
     public static existEmail="/existEmail";
+    public static sendOTP="/sendotp";
 }

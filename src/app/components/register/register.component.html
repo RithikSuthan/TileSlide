@@ -25,37 +25,56 @@
         </div>
         <br>
         <div class="flex justify-between">
-            <label class="font-bold text-xl">Password:</label>
-            <input [type]="showPassword?'text':'password'"
-             class="bg-green-200 text-xl" required
-            [(ngModel)]="registerObj.password"
+            <label class="font-bold text-xl">OTP:</label>
+            <input type="number" class="bg-green-200 text-xl" required
+            [(ngModel)]="sentOTP"
+            (change)="verifyOTP()"
             >    
-            <img src="../../../assets/show.png" alt="showImage" class="w-6 cursor-pointer
-            " *ngIf="showPassword"
-            (click)="visiblePassword()"
-            >
-             <img src="../../../assets/hidden.png" alt="hiddenImage"
-             class="w-6 cursor-pointer
-            " *ngIf="!showPassword" (click)="visiblePassword()"
-            >
         </div>
         <br>
-        <div class="flex justify-between">
-            <label class="font-bold text-xl">Confirm Password:</label>
-            <input type="password" class="bg-green-200 text-xl" required
-            [(ngModel)]="confirmPassword"
-            (change)="checkChanngePassword()"
-            >    
-           
-        </div>
-        <br>
-        <div class="flex justify-center">
+        <div class="flex justify-center" *ngIf="otpDialog">
             <span class="font-bold bg-blue-400 p-3 text-xl rounded-md"
-            (click)="register()"
+            (click)="sendOtp()"
             >
-                Register
+                Send OTP
             </span>
         </div>
 
+        <div *ngIf="otpVerified">
+            <br>
+            <div class="flex justify-between">
+                <label class="font-bold text-xl">Password:</label>
+                <input [type]="showPassword?'text':'password'"
+                 class="bg-green-200 text-xl" required
+                [(ngModel)]="registerObj.password"
+                >    
+                <img src="../../../assets/show.png" alt="showImage" class="w-6 cursor-pointer
+                " *ngIf="showPassword"
+                (click)="visiblePassword()"
+                >
+                 <img src="../../../assets/hidden.png" alt="hiddenImage"
+                 class="w-6 cursor-pointer
+                " *ngIf="!showPassword" (click)="visiblePassword()"
+                >
+            </div>
+            <br>
+            <div class="flex justify-between">
+                <label class="font-bold text-xl">Confirm Password:</label>
+                <input type="password" class="bg-green-200 text-xl" required
+                [(ngModel)]="confirmPassword"
+                (change)="checkChanngePassword()"
+                >    
+               
+            </div>
+            <br>
+            <div class="flex justify-center">
+                <span class="font-bold bg-blue-400 p-3 text-xl rounded-md"
+                (click)="register()"
+                >
+                    Register
+                </span>
+            </div>
+    
+        </div>
     </div>
 </div>

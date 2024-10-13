@@ -8,8 +8,10 @@ import { EndPoints } from '../Contants/EndPoints';
 export class TileServiceService {
 
   url:any;
+  mailUrl:any;
   constructor(private http:HttpClient) {
     this.url=environment.tile_service_url;
+    this.mailUrl=environment.email_service_url;
    }
   login(postObj:any)
   {
@@ -30,5 +32,10 @@ export class TileServiceService {
   {
     const url=this.url+EndPoints.existEmail+`?email=`+email;
     return this.http.get<any>(url);
+  }
+  sendOtp(postObj:any)
+  {
+    const url=this.mailUrl+EndPoints.sendOTP;
+    return this.http.post<any>(url,postObj);
   }
 }
